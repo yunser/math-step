@@ -1,5 +1,5 @@
 <template>
-    <my-page title="首页">
+    <my-page title="首页" :page="page">
         <ui-text-field v-model="exp" label="表达式" />
         <br>
         <ui-raised-button class="btn" primary label="计算" @click="calculate" />
@@ -23,7 +23,18 @@
             return {
                 exp: '2x + 2x + x + x',
                 exp2: '2x + 2x + x + x',
-                results: []
+                results: [],
+                page: {
+                    menu: [
+                        {
+                            type: 'icon',
+                            icon: 'apps',
+                            href: 'https://app.yunser.com/?utm_source=mathstep',
+                            target: '_blank',
+                            title: '应用'
+                        }
+                    ]
+                }
             }
         },
         mounted() {
